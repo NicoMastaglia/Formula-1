@@ -1,0 +1,126 @@
+.race-box {
+  width: 100%;
+  background: var(--bianco-puro);
+  border-radius: 1rem;
+  overflow: hidden;
+  font-family: var(--font-f1);
+  font-style: italic;
+}
+
+.race-list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  background-color: var(--rosso-corsa);
+  scrollbar-width: none;
+  height: 5vh;
+  position: relative;
+  transition: 0.2s;
+}
+
+.race-list span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 15%;
+
+  padding: 0 1vw;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+
+  background-color: var(--rosso-corsa);
+  font-size: 1vw;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--bianco-puro);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+
+  border-right: 2px solid var(--grigio-carbonio);
+  transition: 0.3s;
+}
+.race-list span.not-active {
+  transition: 0.3s;
+}
+.race-list span.not-active:hover {
+  transform: translateY(-3px);
+  background-color: #ff5747;
+}
+
+.race-list span:last-child {
+  border-right: none;
+}
+
+.race-list span.active {
+  color: var(--bianco-puro);
+  background: transparent;
+  transform: translateY(0);
+  z-index: 3;
+  transition: 0.3s;
+}
+
+.race-list .cover {
+  background-color: var(--nero-asfalto);
+  position: absolute;
+  height: 100%;
+  width: 15%;
+  z-index: 2;
+  left: 0;
+  transition: 0.3s;
+}
+
+.race-result {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1.5vw;
+  background-color: var(--bianco-puro);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.info-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5vw;
+}
+
+.race-result > .error-message {
+  font-size: 1.3vw;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.race-name {
+  width: 100%;
+  font-size: 1.5vw;
+  letter-spacing: 2px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.race-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 1vw;
+  padding: 0 10vw;
+  justify-items: center;
+}
+.race-info > span > span {
+  font-weight: 850;
+  letter-spacing: 1px;
+  font-size: 1.2vw;
+}

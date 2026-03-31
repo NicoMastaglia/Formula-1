@@ -1,0 +1,182 @@
+.section {
+  width: 50%;
+  background-color: var(--bianco-puro);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-style: italic;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  max-height: 75vh;
+}
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+}
+.section > .section-title {
+  font-size: 2vw;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  background-color: var(--rosso-corsa);
+  color: var(--bianco-puro);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* constructor  */
+.information {
+  font-size: 1vw;
+  margin: 1rem 0 0.5rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+.information > span {
+  width: 25%;
+  text-align: right;
+}
+.information > #team {
+  text-align: left;
+  width: 50%;
+}
+.section > .constructor-standing-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#constructor-standing-data {
+  max-height: 75vh;
+  overflow-y: auto;
+  /* scrollbar-color: var(--grigio-carbonio) transparent; */
+  scrollbar-width: none;
+  outline: none;
+}
+#constructor-standing-data > p {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  position: relative;
+  text-shadow: 1.5px 1.5px 0px rgba(0, 0, 0, 0.2);
+}
+#constructor-standing-data > p:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+#constructor-standing-data > p:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.062);
+}
+#constructor-standing-data > p:nth-child(even):hover {
+  background-color: rgba(0, 0, 0, 0.082);
+}
+#constructor-standing-data > p > .team-name {
+  font-size: 1.3vw;
+  font-weight: bold;
+  width: 50%;
+}
+.flag-img {
+  height: 1vw;
+  aspect-ratio: 1.5;
+}
+#constructor-standing-data > p > .team-point {
+  font-weight: 900;
+  font-size: 1.1vw;
+  width: 25%;
+  text-align: right;
+}
+#constructor-standing-data > p > .team-wins {
+  font-weight: 900;
+  font-size: 1.1vw;
+  width: 25%;
+  text-align: right;
+}
+
+/* driver  */
+.driver-information {
+  font-size: 1vw;
+  margin: 1rem 0 0.5rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+.driver-information > span {
+  width: 15%;
+  text-align: right;
+}
+.driver-information > #team {
+  text-align: left;
+  width: 30%;
+}
+.driver-information > #driver {
+  text-align: left;
+  width: 40%;
+}
+#driver-standing-data {
+  max-height: 100%;
+  overflow-y: auto;
+  outline: none;
+  /* scrollbar-color: var(--grigio-carbonio) transparent; */
+  scrollbar-width: none;
+}
+#driver-standing-data > p {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  position: relative;
+  text-shadow: 1.5px 1.5px 0px rgba(0, 0, 0, 0.2);
+}
+#driver-standing-data > p:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+#driver-standing-data > p:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.062);
+}
+#driver-standing-data > p:nth-child(even):hover {
+  background-color: rgba(0, 0, 0, 0.082);
+}
+#driver-standing-data > p > .team-name {
+  font-size: 1.3vw;
+  font-weight: bold;
+  width: 40%;
+}
+#driver-standing-data > p > .driver-team {
+  font-weight: bold;
+  font-size: 1.1vw;
+  width: 30%;
+  text-align: left;
+}
+#driver-standing-data > p > .team-point {
+  font-weight: 900;
+  font-size: 1.1vw;
+  width: 15%;
+  text-align: right;
+}
+#driver-standing-data > p > .team-wins {
+  font-weight: 900;
+  font-size: 1.1vw;
+  width: 15%;
+  text-align: right;
+}

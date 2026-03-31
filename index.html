@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="\style\main.css" />
+    <link rel="stylesheet" href="\style\standing.css" />
+    <link rel="stylesheet" href="\style\result.css" />
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <button class="nav-btn" id="standing-btn">Classifiche</button>
+      <button class="nav-btn" id="result-btn">Risultati</button>
+      <button class="nav-btn" id="test"></button>
+      <div class="search">
+        <input
+          type="number"
+          min="1950"
+          max="2026"
+          placeholder=""
+          id="year"
+          value="2026"
+          oninput="refresh()"
+        />
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#15151e"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          onclick=""
+        >
+          <circle cx="13" cy="11" r="8"></circle>
+          <line x1="3" y1="21" x2="7.35" y2="16.65"></line>
+        </svg>
+      </div>
+    </nav>
+    <main id="main"></main>
+  </body>
+  <script src="\scripts\script.js"></script>
+</html>
