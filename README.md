@@ -1,22 +1,22 @@
 # Formula-1 Dashboard
 
-Applicazione web frontend (HTML, CSS, JavaScript vanilla) per consultare dati di Formula 1 per anno.
+A frontend web application (HTML, CSS, vanilla JavaScript) to browse Formula 1 data by year.
 
-L'interfaccia offre due sezioni principali:
+The interface provides two main sections:
 
-- `Classifiche`: classifica costruttori e classifica piloti.
-- `Risultati`: elenco delle gare della stagione e dettaglio sintetico della gara selezionata.
+- `Classifiche`: constructor standings and driver standings.
+- `Risultati`: list of season races and a short summary of the selected race.
 
-## Funzionalita
+## Features
 
-- Selezione anno tramite input numerico (`1950` -> anno corrente).
-- Aggiornamento dinamico dei contenuti al cambio anno.
-- Navigazione tra vista classifiche e vista risultati.
-- Recupero dati live da API pubbliche.
-- Visualizzazione bandiere in base alla nazionalita di team/piloti.
-- Layout responsive con sezioni dedicate (`main.css`, `standing.css`, `result.css`).
+- Year selection through numeric input (`1950` -> current year).
+- Dynamic content updates when the year changes.
+- Navigation between standings view and results view.
+- Live data fetching from public APIs.
+- Flag display based on team/driver nationality.
+- Responsive layout with dedicated stylesheets (`main.css`, `standing.css`, `result.css`).
 
-## Struttura progetto
+## Project structure
 
 ```text
 .
@@ -30,49 +30,49 @@ L'interfaccia offre due sezioni principali:
 └── README.md
 ```
 
-## Stack tecnico
+## Tech stack
 
 - HTML5
 - CSS3
 - JavaScript (ES6+)
-- API esterne:
-	- `https://api.jolpi.ca/ergast/f1/...` (dati Formula 1)
-	- `https://restcountries.com/v3.1/name/...` (bandiere nazionali)
+- External APIs:
+  - `https://api.jolpi.ca/ergast/f1/...` (Formula 1 data)
+  - `https://restcountries.com/v3.1/name/...` (national flags)
 
-## Avvio locale
+## Run locally
 
-Non sono richieste dipendenze o build step.
+No dependencies or build steps are required.
 
-1. Clona il repository.
-2. Apri `index.html` nel browser.
+1. Clone the repository.
+2. Open `index.html` in your browser.
 
-Per evitare possibili limitazioni legate a `fetch` in alcuni ambienti, e consigliato usare un server locale semplice (es. estensione Live Server di VS Code o `python -m http.server`).
+To avoid possible `fetch` limitations in some environments, using a simple local server is recommended (for example VS Code Live Server extension or `python -m http.server`).
 
-## Come funziona l'app
+## How the app works
 
-- All'avvio viene caricata di default la pagina `Risultati` (`loadResultPage()`).
-- Il cambio anno richiama `refresh()`, che aggiorna la sezione attiva.
-- Nella sezione `Classifiche`:
-	- `getConstructorsStanding()` recupera la classifica costruttori.
-	- `GetDriverStanding()` recupera la classifica piloti.
-- Nella sezione `Risultati`:
-	- `getRaceList()` recupera l'elenco gare dell'anno.
-	- `getRaceResult(round)` recupera i dati della singola gara selezionata.
+- On startup, the `Risultati` page is loaded by default (`loadResultPage()`).
+- Changing the year triggers `refresh()`, which updates the active section.
+- In the `Classifiche` section:
+  - `getConstructorsStanding()` fetches constructor standings.
+  - `GetDriverStanding()` fetches driver standings.
+- In the `Risultati` section:
+  - `getRaceList()` fetches the race list for the selected year.
+  - `getRaceResult(round)` fetches data for the selected race.
 
-## Note utili
+## Useful notes
 
-- L'interfaccia e i testi sono in italiano.
-- Il controllo anno usa sia i limiti dell'input HTML che una validazione JavaScript (`checkYear`).
-- In assenza dati viene mostrato un messaggio come `Nessun risultato rilevato in questo anno`.
+- The interface and texts are in Italian.
+- Year validation relies on both HTML input limits and JavaScript validation (`checkYear`).
+- When no data is available, a message like `Nessun risultato rilevato in questo anno` is shown.
 
-## Limiti attuali
+## Current limitations
 
-- La vista `Risultati` mostra informazioni della gara (nome, localita, circuito, data, round), ma non la classifica completa dei piloti per quella gara.
-- Le chiamate a `getFlag` sono eseguite una per riga in modo sequenziale, quindi su alcune connessioni il caricamento puo risultare piu lento.
+- The `Risultati` view shows race info (name, location, circuit, date, round), but not the full driver standings for that race.
+- Calls to `getFlag` are executed sequentially (one per row), so loading may be slower on some connections.
 
-## Possibili miglioramenti
+## Possible improvements
 
-- Mostrare la classifica completa della gara nella sezione risultati.
-- Aggiungere stato di caricamento/skeleton e gestione errori piu dettagliata.
-- Introdurre caching per bandiere e risposte API.
-- Migliorare accessibilita e supporto mobile avanzato.
+- Show full race standings in the results section.
+- Add loading state/skeleton and more detailed error handling.
+- Introduce caching for flags and API responses.
+- Improve accessibility and advanced mobile support.
