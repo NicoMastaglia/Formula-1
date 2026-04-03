@@ -324,8 +324,8 @@ async function printRaceResult(data) {
                     <div class="info-container">
                       <p class="race-name">${loadData[0].raceName}</p>
                       <div class="race-info">
-                        <span>Località: <span>${loadData[0].Circuit.Location.locality}</span></span>
-                        <span>Circuito: <span>${loadData[0].Circuit.circuitName}</span></span>
+                        <span>Località: <span>${loadData[0].Circuit.Location.locality}</span></span>  //modificare disposizione span
+                        <span>Circuito: <span>${loadData[0].Circuit.circuitName}</span></span>        //in una griglia 2 x 4
                         <span>Data: <span>${loadData[0].date}</span></span>
                         <span>Round: <span>${loadData[0].round}</span></span>
                       </div>
