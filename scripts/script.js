@@ -368,5 +368,5 @@ async function printRaceResult(data) {
 standingBtn.addEventListener("click", loadStandingPage);
 resultBtn.addEventListener("click", loadResultPage);
 
-// loadStandingPage();
-loadResultPage();
+loadStandingPage();
+// loadResultPage();
