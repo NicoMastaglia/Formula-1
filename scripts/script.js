@@ -314,23 +314,54 @@ async function getRaceResult(round) {
 
 async function printRaceResult(data) {
   const loadData = await data;
+  console.log(loadData);
   const BOX = document.querySelector(".race-result");
   BOX.innerHTML = "";
   if (typeof loadData == "string") {
     BOX.innerHTML += `<p class="error-message">${loadData}</p>`;
   } else {
-    console.log(loadData[0]);
     BOX.innerHTML += `
                     <div class="info-container">
                       <p class="race-name">${loadData[0].raceName}</p>
                       <div class="race-info">
-                        <span>Località: <span>${loadData[0].Circuit.Location.locality}</span></span>  //modificare disposizione span
-                        <span>Circuito: <span>${loadData[0].Circuit.circuitName}</span></span>        //in una griglia 2 x 4
-                        <span>Data: <span>${loadData[0].date}</span></span>
-                        <span>Round: <span>${loadData[0].round}</span></span>
+                        <span>Località:</span><span class="info-span">${loadData[0].Circuit.Location.locality}</span> 
+                        <span>Circuito:</span><span class="info-span">${loadData[0].Circuit.circuitName}</span>        
+                        <span>Data:</span><span class="info-span">${loadData[0].date}</span>
+                        <span>Round:</span><span class="info-span">${loadData[0].round}</span>
                       </div>
                     </div>
+                    <div class="race-standing">
+                      <p class="result-info">
+                        <span id="result-position">Pos</span>
+                        <span id="result-driver">Pilota</span>
+                        <span id="result-team">Team</span>
+                        <span id="result-time">Tempo</span>
+                      </p>
+                    </div>
                     `;
+
+    const DBOX = document.querySelector(".race-standing");
+    for (let i = 0; i < loadData[0].Results.length; i++) {
+      let flagUrl = await getFlag(
+        loadData[0].Results[i].Driver.nationality.replace(/\s+/g, ""),
+      );
+      console.log(flagUrl);
+
+      DBOX.innerHTML += `
+                      <p id="driver-container">
+                        <span id="result-position">${loadData[0].Results[i].position}</span> 
+                        <span id="result-driver"><img src="${flagUrl}"> ${loadData[0].Results[i].Driver.givenName} ${loadData[0].Results[i].Driver.familyName}</span>        
+                        <span id="result-team">${loadData[0].Results[i].Constructor.name}</span>
+                        <span id="result-time">
+                          ${loadData[0].Results[i].status == "Finished" ? loadData[0].Results[i].Time?.time : ""}
+                          ${loadData[0].Results[i].status == "Lapped" ? (loadData[0].Results[0].laps - loadData[0].Results[i].laps == 1 ? "+" + (loadData[0].Results[0].laps - loadData[0].Results[i].laps) + " Giro" : "+" + (loadData[0].Results[0].laps - loadData[0].Results[i].laps) + " Giri") : ""}
+                          ${loadData[0].Results[i].status == "Retired" ? "DNF" : ""}
+                          ${loadData[0].Results[i].status == "Did not start" ? "DNS" : ""}
+                          ${loadData[0].Results[i].status == "Disqualified" ? "DSQ" : ""}
+                        </span>
+                      </p>
+                      `;
+    }
   }
 }
 

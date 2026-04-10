@@ -82,12 +82,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 1.5vw;
   background-color: var(--bianco-puro);
   text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
 }
 
 .info-container {
+  padding: 1.5vw;
   width: 100%;
   display: flex;
   align-items: center;
@@ -114,13 +114,61 @@
 .race-info {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1vw;
   padding: 0 10vw;
   justify-items: center;
 }
-.race-info > span > span {
+.race-info > span {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.race-info > .info-span {
   font-weight: 850;
   letter-spacing: 1px;
   font-size: 1.2vw;
+  justify-content: start;
+}
+
+.race-standing {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.race-standing > p {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5vw;
+}
+.race-standing > p > #result-position {
+  width: 5%;
+}
+.race-standing > p > #result-driver {
+  width: 40%;
+}
+.race-standing > p > #result-team {
+  width: 40%;
+}
+.race-standing > p > #result-time {
+  width: 15%;
+}
+
+#driver-container > span {
+  font-weight: bold;
+  font-size: 1.3vw;
+  cursor: pointer;
+}
+#driver-container > span > img {
+  height: 1vw;
+  aspect-ratio: 1.5;
+}
+#driver-container:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.062);
 }
