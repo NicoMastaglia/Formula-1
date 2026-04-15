@@ -345,7 +345,6 @@ async function printRaceResult(data) {
       let flagUrl = await getFlag(
         loadData[0].Results[i].Driver.nationality.replace(/\s+/g, ""),
       );
-      console.log(flagUrl);
 
       DBOX.innerHTML += `
                       <p id="driver-container">
