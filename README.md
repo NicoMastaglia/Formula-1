@@ -1,6 +1,6 @@
 # Formula-1 Dashboard
 
-A frontend web application (HTML, CSS, vanilla JavaScript) to browse Formula 1 data by year.
+A frontend web application (HTML, CSS, TypeScript) to browse Formula 1 data by year.
 
 The interface provides two main sections:
 
@@ -22,7 +22,7 @@ The interface provides two main sections:
 .
 ├── index.html
 ├── scripts/
-│   └── script.js
+│   └── script.ts
 ├── style/
 │   ├── main.css
 │   ├── result.css
@@ -34,7 +34,7 @@ The interface provides two main sections:
 
 - HTML5
 - CSS3
-- JavaScript (ES6+)
+- TypeScript
 - External APIs:
   - `https://api.jolpi.ca/ergast/f1/...` (Formula 1 data)
   - `https://restcountries.com/v3.1/name/...` (national flags)
